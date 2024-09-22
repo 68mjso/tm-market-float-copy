@@ -22,9 +22,9 @@ window.addEventListener("load", function () {
       exec();
     }
   });
-  
+
   function exec() {
-      var tags = document.getElementsByTagName("csgofloat-item-row-wrapper");
+      var tags = document.getElementsByTagName("csfloat-item-row-wrapper");
       var found = [];
       for (var i = 0; i < tags.length; i++) {
           found.push(
@@ -34,10 +34,8 @@ window.addEventListener("load", function () {
               .split("\n")[0].trim()
           );
       }
-      let str = "";
-      for (var j = 0; j < found.length; j++) {
-          str += found[j] + ",";
-      }
+      let str = found.join(",");
+      console.log(str);
       let temp = document.createElement("textarea");
       document.body.append(temp);
       temp.value = str;
@@ -45,4 +43,3 @@ window.addEventListener("load", function () {
       document.execCommand("copy");
       temp.remove();
   }
-  
